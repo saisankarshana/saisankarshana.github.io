@@ -81,6 +81,15 @@ input[type=text], input[type=password]
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
+input[type=email], input[type=password] 
+{
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
 
 
 button 
@@ -132,29 +141,54 @@ function validateForm()
   var x = document.forms["myForm"]["uname"].value;
   if (x == "") 
   {
-    alert("Enter UserName...!!!");
+    alert("Enter The Email ID...!!!");
     return false;
   }
-  var x = document.forms["myForm"]["psw"].value;
-  if (x == "") 
+  
+  var x1 = document.forms["myForm"]["psw"].value;
+  if (x1 == "") 
   {
-    alert("Enter Password...!!!");
+    alert("Enter The Password...!!!");
     return false;
   }
- 
+
+
+
+
+
+    if(x="dsaisankarshana@gmail.com" && x1== "sai" )
+    {
+        alert( "LogIn successful...!!!" );
+	
+	return true; 
+    }
+    else
+    {
+        alert( "Enter a Valid Email ID or Password...!!!" );
+        
+	return false; 
+    }
+
 }
+
+
+
 </script>
+
 </head>
 <body>
 <div class="header">
 <ul>
   <li><a href="hp.html">Home Page</a></li>
-  <li><a class="active" href="login.html"><b>Login</b></a></li>
-  <li><a href="signup.html">Sign Up</a></li>
   
+  <li><a href="signup.html">Sign Up</a></li>
+  <li><a class="active" href="login.html"><b>Login</b></a></li>
   <li><a href="contactinfo.html">Contact Us</a></li>
   <li><a href="abtus.html">About Us</a></li>
   <li><a href="FAQs.html">FAQs</a></li>
+  
+
+
 </ul>
 </div>
 <h1><font color="white">Login</font></h1>
@@ -166,9 +200,9 @@ function validateForm()
 
   <div class="container">
     <label for="uname"><b><font color="white">Username</font></b></label>
-    <input type="text" placeholder="Enter Username" name="uname"><br>
+    <input type="email" placeholder="Enter Username" name="uname"requried><br>
 
-    <label for="psw" align="center"><b><font color="white">Password</font></b></label>
+    <label for="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" align="center"><b><font color="white">Password</font></b></label>
     <input type="password" placeholder="Enter Password" name="psw">
         
     <button type="submit"><b>Login</b></button>

@@ -127,6 +127,15 @@ function validateForm()
     return false;
   }
  
+
+var a = document.myForm.pnrnumber.value;
+
+if((a.length < 10) || (a.length > 10))
+{
+alert(" Your PNR Number must be 10 Integers");
+document.myForm.pnrnumber.select();
+return false;
+}
 }
 </script>
 </head>
@@ -137,7 +146,7 @@ function validateForm()
   
  
   <li><a class="active" href="pnr.html"><b>PNR Status</b></a></li>
- 
+ <li style="float:right"><a class="active" href="login.html">LogOut</a></li>
  
 </ul>
 </div>
@@ -146,7 +155,7 @@ function validateForm()
 <div class="container">
   <form name="myForm" action=".html" onsubmit="return validateForm()" method="post">
     <label for="fname"><b>PNR Number</b></label>
-    <input type="text" id="fname" name="pnrnumber" placeholder="Enter PNR Number" max="10">
+    <input type="text"  id="fname" name="pnrnumber" placeholder="Enter PNR Number" max="10">
 
     
     
