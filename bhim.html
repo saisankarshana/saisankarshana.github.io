@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head><title>Payment</title>
+<link rel="icon" href="img12.png">
+<style>
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: blue;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: dodgerblue;
+  color: black;
+}
+
+body 
+{
+  font-family: Arial;
+  font-size: 17px;
+  padding: 8px;
+}
+
+*{
+  box-sizing: border-box;
+overflow: hidden;
+}
+
+.row 
+{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 -16px;
+
+}
+
+.col-25 
+{
+  -ms-flex: 25%;
+  flex: 25%;
+}
+
+.col-50 
+{
+  -ms-flex: 50%; 
+  flex: 50%;
+}
+
+.col-75 
+{
+  -ms-flex: 75%; 
+  flex: 75%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 16px;
+}
+
+.container 
+{
+  background-color: #f2f2f2;
+  padding: 5px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+
+input[type=number] 
+{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=text] 
+{
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+label {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.icon-container 
+{
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.btn
+{
+  background-color: blue;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.btn:hover
+{
+  background-color: dodgerblue;
+}
+
+a 
+{
+  color: #2196F3;
+}
+
+hr
+{
+  border: 1px solid lightgrey;
+}
+
+span.price 
+{
+  float: right;
+  color: grey;
+}
+
+.col-25 
+{
+    margin-bottom: 20px;
+  }
+}
+
+input[type=number], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+input[type=submit] {
+  background-color:blue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+width: 100%;
+
+}
+
+input[type=submit]:hover {
+  background-color:blue;
+  
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+<script>
+
+
+function validateForm() 
+{
+  var x = document.forms["myForm"]["cname"].value;
+  if (x == "") 
+  {
+    alert("Enter The Card Holder's Name...!!!");
+    return false;
+  }
+  
+var x = document.forms["myForm"]["ccnum"].value;
+  if (x== "") 
+  {
+    alert("Enter The 16-digit Card Number...!!!");
+    return false;
+  }
+ var x = document.forms["myForm"]["expmonth"].value;
+  if (x == "") 
+  {
+    alert("Enter The Expiry Month...!!!");
+    return false;
+  }
+ var x = document.forms["myForm"]["expyear"].value;
+  if (x == "") 
+  {
+    alert("Enter The Expiry Year...!!!");
+    return false;
+  }
+var x = document.forms["myForm"]["cvv"].value;
+  if (x == "") 
+  {
+    alert("Enter The 3-digit CVV Number...!!!");
+    return false;
+  }
+
+
+
+ var a = document.myForm.ccnum.value;
+     if(a=="")
+  {
+  alert("please Enter the Contact Number");
+  document.myForm.ccnum.focus();
+  return false;
+  }
+ 
+  if((a.length < 16) || (a.length > 16))
+  {
+  alert(" Your Card Number must be 16 Digits");
+  document.myForm.ccnum.select();
+  return false;
+  }
+  
+   var a = document.myForm.cvv.value;
+     if(a=="")
+  {
+  alert("please Enter the Contact Number");
+  document.myForm.cvv.focus();
+  return false;
+  }
+ 
+  if((a.length < 3) || (a.length > 3))
+  {
+  alert(" Your CVV Number must be 3 Digits");
+  document.myForm.cvv.select();
+  return false;
+  }
+
+}
+</script>
+
+</style>
+</head>
+<body>
+
+
+<ul>
+  <li><a href="options.html"><b>Payment Options</b></a></li><hr>
+  <li><a href="payment.html">Debit/Credit Card</a></li>
+  <li><a href="netbanking.html">Net Banking</a></li>
+  <li><a href="paytm.html">Paytm</a></li>
+  <li><a href="upi.html">UPI</a></li>
+  <li><a class="active" href="bhim.html"><b>BHIM</b></a></li>
+  <li><a href="pay.html">PhonePe/Google Pay</a></li>
+</ul>
+ <form name="myForm" action="invoice.html" onsubmit="return validateForm()" method="post">
+<div style="margin-left:25%;padding:1px 16px;height:1000px;">
+<div class="container">
+
+ <label for="fname">Enter BHIM ID</label>
+    <input type="Number"  name="paytmnumber" placeholder="Enter BHIM ID">
+<input type="radio">I have read the <a>Terms And Conditions</a> and agree to the Privacy Policy</input>
+    <input type="submit" align="center" onsubmit="return validateForm()" value="Make Payment">
+</div>
+
+</div>
+</form>
+</body>
+</html>
