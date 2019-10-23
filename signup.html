@@ -104,7 +104,14 @@ input[type=text], input[type=password] {
   border: none;
   background: #f1f1f1;
 }
-
+input[type=email], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
 
 input[type=text]:focus, input[type=password]:focus {
   background-color: #ddd;
@@ -215,13 +222,44 @@ function validateForm()
     alert("Enter The Password...!!!");
     return false;
   }
-var x = document.forms["myForm"]["psw-repeat"].value;
-  if (x == "") 
+  var x1 = document.forms["myForm"]["psw-repeat"].value;
+  if (x1 == "") 
   {
     alert("Repeat The Password...!!!");
     return false;
   }
- 
+ {
+  var a = document.myForm.number.value;
+     if(a=="")
+  {
+  alert("please Enter the Contact Number");
+  document.myForm.number.focus();
+  return false;
+  }
+  
+  if((a.length < 10) || (a.length > 10))
+  {
+  alert(" Your Mobile Number must be 10 Digits");
+  document.myForm.number.select();
+  return false;
+  }
+ }
+	        
+		
+                
+                if (x!=x1) 
+		{ 
+                    alert("\nPassword did not match...!!!");
+                    return false; 
+                } 
+  
+                
+                else
+		{ 
+                    alert("Password Matched...!!!");
+                    return true; 
+                } 
+
 }
 </script>
 </head>
@@ -229,9 +267,9 @@ var x = document.forms["myForm"]["psw-repeat"].value;
 <ul>
 <div class="header">
 <li><a href="hp.html">Home Page</a></li>
-  <li><a href="login.html">Login</a></li>
-  <li><a class="active" href="signup.html"><b>Sign Up</b></a></li>
   
+  <li><a class="active" href="signup.html"><b>Sign Up</b></a></li>
+  <li><a href="login.html">Login</a></li>
   <li><a href="contactinfo.html">Contact Us</a></li>
   <li><a href="abtus.html">About Us</a></li>
   <li><a href="FAQs.html">FAQs</a></li>
@@ -243,9 +281,9 @@ var x = document.forms["myForm"]["psw-repeat"].value;
     <hr>
 
     <label for="email"><b><font color="white">Email</b></font></label>
-    <input type="text" placeholder="Enter Email" name="email">
+    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email" name="email"><br>
     <label for="number"><b><font color="white">Phone Number</b></font></label>
-    <input type="number" placeholder="Enter Your Mobile Number" name="number">
+    <input type="number" pattern="^\d{10}$" placeholder="Enter Your Mobile Number" name="number">
 
     <label for="psw"><b><font color="white">Password</b></font></label>
     <input type="password" placeholder="Enter Password" name="psw">
@@ -260,7 +298,7 @@ var x = document.forms["myForm"]["psw-repeat"].value;
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="submit" onclick="myFunction()" class="signupbtn">Sign Up</button>
     </div>
   </div>
 </form>
