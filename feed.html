@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head><title>Feed Back</title>
+<link rel="icon" href="img12.png">
+
+<style>
+{
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea 
+{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] 
+{
+  background-color: dodgerblue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: middle;
+}
+
+input[type=submit]:hover 
+{
+  background-color: dodgerblue;
+}
+
+.container 
+{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.col-25 
+{
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 
+{
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.center {
+  margin: auto;
+  width: 5%;
+  
+  padding: 10px;
+}
+h1
+{
+color:dodgerblue;
+}
+
+
+ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:white;
+}
+{ 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow:hidden;
+  background-color: #f1f1f1;
+  padding: 3px 3px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+</style>
+<script>
+function myFunction() {
+  alert("Thank You...!!!");
+}
+</script>
+</head>
+<body>
+<div class="header">
+<ul>
+  <li><a href="hp.html">Home Page</a></li>
+  <li><a href="login.html">Login</a></li>
+  <li><a href="signup.html">Sign Up</a></li>
+  
+  <li><a href="contactinfo.html">Contact Us</a></li>
+  <li><a href="abtus.html">About Us</a></li>
+  <li><a href="FAQs.html">FAQs</a></li>
+<li><a class="active" href="feed.html"><b>FeedBack</b></a></li>
+</ul>
+</div>
+<h1>Feed Back Form</h1>
+
+<hr>
+<div class="container">
+  <form action="hp.html">
+    <div class="row">
+      <div class="col-25">
+        <label for="fname"><b>First Name</b></label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname"><b>Last Name</b></label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="subject"><b>Suggetions</b></label>
+      </div>
+      <div class="col-75">
+        <textarea id="subject" name="subject" placeholder="We'll Improve Ourselves.." style="height:100px"></textarea>
+      </div>
+    </div>
+<label for="fname"><b>Rating</b></label>
+    <div class="row">
+
+      <div class="col-75">
+      <form action="">
+  <input type="radio" name="gender" value="male">Excellent<br>
+  <input type="radio" name="gender" value="female"> Good<br>
+  <input type="radio" name="gender" value="other"> Average<br>
+  <input type="radio" name="gender" value="female"> Bad<br>
+  <input type="radio" name="gender" value="other"> Very Bad
+      </div>
+    </div>
+<hr>
+<div class="center">
+    <div class="row">
+      <input type="submit" onclick="myFunction()" value="Submit">
+    </div>
+</div>
+  </form>
+</div>
+
+</body>
+</html>
